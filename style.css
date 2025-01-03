@@ -1,0 +1,432 @@
+
+:root {
+  /* Colors */
+  --blue-700: #055095;
+  --gray-600: #7f8285;
+  --gray-800: #54595c;
+  --gray: #292f33;
+
+
+  --bg: #222;
+  --fg: #fff;
+  --lightfg: #A3A3A3; 
+  --code: var(--blue-700);
+  --link: #fff;
+  --link-hover: #3f3f3f;
+
+  /* Fonts */
+  --font-body: helvetica, "helvetica neue",
+    ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  --font-mono: "SFMono-Regular", Hack, Menlo, Monaco, Consolas,
+    "Liberation Mono", Courier, monospace;
+}
+
+/* * The universal selector applies the rule to all elements on the page */
+* { 
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  height: 100%; /* Ensures the body and html take up the full height */
+}
+
+/* Layout */
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+ 
+  font-family: "Helvetica";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+
+  margin: 0;
+  padding: 0;
+ 
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+
+  cursor: none; /* Hide the default cursor */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition between modes */
+
+}
+
+body.light-mode {
+  --bg: #F0F0F0;
+  --fg: #3b3b3b;
+  --link: var(--fg);
+}
+
+
+p {
+  margin-top: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Underlining the span */
+.underlined {
+  text-decoration: underline;
+  cursor: pointer; /* Make it look clickable */
+}
+
+/* Optionally, change color when hovered */
+.underlined:hover {
+  color: whitesmoke; /* Green color when hovered */
+}
+
+.inline-colored-text {
+  font-weight: bold;
+}
+
+.background-block {
+  padding: 2px 3px;
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* ========================
+   Links
+======================== */
+a {
+    color: var(--link); /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+}
+
+a:hover {
+    color: var(--bg); /* Change text color on hover */
+    background: var(--fg);
+}
+
+a:active {
+    color: var(--bg); /* Change text color on hover */
+    background: #ffffff;
+}
+
+/* ========================
+   Header
+======================== */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  background-color: #292929;
+  height: 25px;
+  font-family: monospace;
+  color: #ffffff83;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header div:not(:last-child) {
+  padding-right: 10px; /* Add padding to all except the last element */
+}
+
+/* ========================
+   Homepage
+======================== */
+
+.blog-intro {
+  font-weight: 500;
+  margin-bottom: 25px;
+  max-width: 520px;
+}
+
+/* ========================
+   Blog
+======================== */
+.blog-wrapper {
+  max-width: 600px;
+  }
+  
+.blog-description {
+    margin-bottom: 20px;
+    color: var(--lightfg);
+}
+
+.blogposts-wrapper {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: flex-start;
+}
+
+.blogposts-wrapper > *:not(:last-child) {
+  margin-bottom: 10px; /* Add margin to all items except the last one */
+}
+
+.blog-item {
+  height: 23px;
+}
+
+.blog-date {
+  background: var(--fg);
+  padding: 2px 3px;
+  color:  var(--bg);
+
+  margin-right: 5px;
+  height: 100%;
+}
+
+.blog-title {
+  font-weight: 600;
+}
+
+
+.container {
+  max-width: 1360px;
+  height: 100%;
+  width: 100%;
+
+  align-self: center;
+
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+
+  display: flex;
+  flex-direction: row;
+
+  gap: 40px; /* Space between rows and columsn */
+}
+
+.left_column {
+  border: 1px solid rgba(255, 255, 255, 0); /* TEMPORARY */
+
+  width: 25%;
+  justify-content: space-between;
+  
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sticky_top {
+  border: 1px solid rgba(255, 255, 255, 0); /* TEMPORARY */
+  position: sticky;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.sticky_name {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1;
+
+  margin-bottom: .5rem;
+
+  width: 100%;
+
+  color: var(--fg);
+  text-decoration: inherit;
+}
+
+.sticky_name_description {
+  color: var(--lightfg);
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.nav {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.nav_spacing {
+  margin-bottom: 2rem;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  align-items: flex-start;
+}
+
+.socials > *:not(:last-child) {
+  margin-bottom: 5px; /* Add margin to all items except the last one */
+}
+
+.socials_h4 {
+  margin: 0px 0px 15px 0px;
+  opacity: 60%;
+}
+
+.right_column {
+  border: 1px solid rgba(255, 0, 0, 0); /* TEMPORARY */
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================
+   Corner item
+======================== */
+
+.corner-banner-wrapper {
+  position: fixed; /* Stick to the top-right corner */
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+}
+
+/* Disable hover effects for this specific link */
+.corner-banner-wrapper:hover {
+  /* Do not apply any hover styling here */
+  background-color: initial; /* Or set it to whatever you want */
+  box-shadow: initial; /* Or set it to a default shadow, if needed */
+  color: inherit; /* Keep the default text color */
+}
+
+/* Wrapper to position the banner in the corner */
+.corner-banner {
+  position: absolute; /* Stick to the top-right corner */
+  top: 75px;
+  right: -30px;
+  width: 150px; /* Adjust width for desired size */
+  text-align: center;
+  line-height: 8px;
+  transform: rotate(45deg); /* Rotate the banner */
+  transform-origin: top right; /* Rotate from the corner */
+  background-color: var(--fg);
+  color: var(--bg); /* Text color */
+  padding: 7px 0; /* Vertical padding */
+  font-size: 12px; /* Font size */
+  z-index: 1000; /* Ensure it's above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+}
+
+.corner-banner:hover {
+  background: #0059ff;
+  color: white;
+}
+
+/* Spacing between the lines */
+.corner-banner span {
+  display: block; /* Ensure stacked lines */
+  font-weight: normal;
+}
+
+/* Make 'Preview' text bold */
+.corner-banner span:first-child {
+  font-weight: bold; /* Bold the first span */
+}
+
+/* ========================
+   Bottom scrolling text bar
+======================== */
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden; /* Hide overflowing text */
+  height: 15px;
+  display: flex;
+  align-items: center;
+  padding-top: 3px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* White line on top */
+  background: #292929;
+}
+
+.scrolling-text {
+  white-space: nowrap; /* Prevent text wrapping */
+  display: inline-block;
+
+  padding-left: 100%; /* Start outside the visible area */
+
+  animation: scroll-tick 20s steps(40, end) infinite; /* Ticking scroll */
+
+  font-family: sixtyfour;
+  font-size: 10px;
+  color: rgb(21, 255, 0);
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* Glowing text */
+}
+
+@keyframes scroll-tick {
+  from {
+    transform: translateX(100%); /* Start from the right */
+  }
+  to {
+    transform: translateX(-100%); /* Scroll to the left */
+  }
+}
+
+/* ========================
+   Ruler crosshair cursor
+======================== */
+
+.ruler-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Prevent interaction with cursor elements */
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 6px; /* Size of the dot */
+  height: 6px;
+  background-color: var(--fg);
+  opacity: 30%;
+  transform: translate(-50%, -50%); /* Center the dot */
+}
+
+.cursor-dot:hover {
+  background-color: #ff5733; /* New color for the dot */
+}
+
+.ruler-horizontal,
+.ruler-vertical {
+  position: absolute;
+  background-color: var(--fg);
+  opacity: 5.5%;
+}
+
+.ruler-horizontal {
+  height: 2px;  /* Thickness of the horizontal line */
+  width: 100vw; /* Full width of the viewport */
+}
+
+.ruler-vertical {
+  width: 2px;  /* Thickness of the vertical line */
+  height: 100vh; /* Full height of the viewport */
+}
