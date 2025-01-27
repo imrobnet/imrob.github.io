@@ -6,7 +6,6 @@
   --gray-800: #54595c;
   --gray: #292f33;
 
-
   --bg: #222;
   --fg: #fff;
   --lightfg: #A3A3A3; 
@@ -58,7 +57,7 @@ body {
 }
 
 body.light-mode {
-  --bg: #F0F0F0;
+  --bg: #ffffff;
   --fg: #3b3b3b;
   --link: var(--fg);
 }
